@@ -1,0 +1,15 @@
+.navbar {
+	block-size: 110px;
+}
+.navbar .flex {
+	flex-direction: column;
+}
+.navbar ul {
+	padding: 10px;
+	background-color: rgba(0, 0, 0, 0.1);
+	inline-size: 50vw;
+}
+/*I went ahead of myself to remove the relative positioning from the showcase-form*/
+.showcase-form {
+	position: static;
+}

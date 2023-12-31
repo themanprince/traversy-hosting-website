@@ -1,0 +1,332 @@
+/*homie's just doing a couple necessary formatting before we actually start*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  color: #333;
+  line-height: 1.6;
+  font-family: sans-serif;
+}
+h1,
+h2 {
+  font-weight: 300;
+  line-height: 1.2;
+  margin: 10px 0;
+}
+p {
+  margin: 10px 0;
+}
+img {
+  inline-size: 100%;
+}
+/*color variable defining*/
+:root {
+  --primary-color: #047aed;
+/*bootstrap primary color*/
+  --dark-color: #002240;
+}
+/*first, the navbar stying*/
+.navbar {
+  block-size: 70px;
+  background-color: var(--primary-color);
+}
+/*this one is to override the styling of the utility class*/
+.navbar .flex {
+  justify-content: space-between;
+}
+#logo {
+  font-size: 40px;
+  color: #fff;
+}
+.navbar ul {
+  list-style-type: none;
+  color: #fff;
+  display: flex;
+  inline-size: 30%;
+  justify-content: space-around;
+}
+.navbar ul li {
+  display: inline;
+  margin-inline: 10px;
+}
+.navbar ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+.navbar ul li a:after {
+  display: block;
+  content: '';
+  block-size: 2px;
+  inline-size: 0;
+  background-color: #fff;
+  margin: 0 auto;
+  transition: 0.7s;
+}
+.navbar ul li a:hover:after {
+  inline-size: 90%;
+}
+/*the showcase section*/
+.showcase {
+  block-size: 400px;
+  background-color: var(--primary-color);
+  color: #fff;
+  position: relative;
+}
+.showcase h1 {
+  font-size: 40px;
+  opacity: 0.5;
+}
+.showcase p {
+  margin: 20px 0;
+}
+.showcase-text a {
+  text-decoration: none;
+}
+/*wanna override some of em grid properties*/
+.showcase .grid {
+  grid-template-columns: 55% 45%;
+  grid-gap: 30px;
+}
+.showcase-form {
+/*wanna move it down a little to create that dumbass effect*/
+  position: relative;
+  top: 60px;
+  block-size: 350px;
+  inline-size: 400px;
+  z-index: 100;
+/*this is to make sure its always in front*/
+  justify-self: self-end;
+}
+.showcase-form .form-control {
+  margin-block: 30px;
+}
+.showcase-form input[type="text"],
+.showcase-form input[type="email"] {
+  border: none;
+  border-block-end: 1px solid rgba(0,0,0,0.3);
+  padding-block: 10px;
+  color: rgba(0,0,0,0.5);
+  inline-size: 100%;
+/*this is to make em go across... I didn't see this one coming*/
+}
+/*next, we getting rid of ugly border that appears on em when we click on em... its called an outline actually*/
+.showcase-form input:focus {
+  outline: none;
+}
+.showcase-form h2 {
+  margin-block: 10px;
+  margin-block-end: 20px;
+  opacity: 0.5;
+  font-family: sans-serif;
+}
+/*the slant.. it going to be a buildup*/
+.showcase:before,
+.showcase:after {
+  content: '';
+  position: absolute;
+  block-size: 100px;
+  bottom: -70px;
+  right: 0;
+  left: 0;
+  background-color: #fff;
+  transform: skewY(-3deg);
+/*this is where all the magic happens... you can change the background-color to see what really happens*/
+}
+/*next, the stats section*/
+.stats {
+  margin-top: 100px;
+  block-size: 200px;
+  padding-inline: 10px;
+/*I believe thats how the stuff was lesser than the section above it*/
+  text-align: center;
+}
+.stats .grid {
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr 1fr;
+}
+.stats-text {
+  font-size: 18px;
+  margin-block-end: 10px;
+  grid-column: 1/4;
+  grid-row: 1/2;
+}
+.stats .item:nth-child(2) {
+  grid-row: 2/3;
+  grid-column: 1/2;
+}
+.stats .item:nth-child(3) {
+  grid-row: 2/3;
+  grid-column: 2/3;
+}
+.stats .item:nth-child(4) {
+  grid-row: 2/3;
+  grid-column: 3/4;
+}
+.stats .item h4 {
+  color: #00f;
+}
+.stats .flex {
+  flex-direction: column;
+  justify-content: flex-end;
+}
+/*the cli part*/
+.cli .grid {
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  margin: 5rem auto;
+}
+.cli .grid *:nth-child(1) {
+  grid-column: 1/span 2;
+  grid-row: 1/span 2;
+  object-fit: cover;
+}
+.cli img {
+  max-inline-size: 100%;
+}
+.cli .grid *:nth-child(2) {
+  grid-column: -2/-1;
+}
+.cli .grid *:nth-child(3) {
+  grid-column: -2/-1;
+}
+/*the part under the part above this*/
+.hosting {
+  background-color: var(--primary-color);
+  color: #fff;
+  text-align: center;
+  font-family: sans-serif;
+}
+.hosting .container {
+  justify-content: space-around;
+  margin: 0 auto;
+  padding-block: 20px;
+}
+.hosting h1 {
+  font-size: 3em;
+}
+.hosting a {
+  text-decoration: none;
+  margin-block: 1em;
+}
+.hosting .container *:nth-child(2) {
+  margin-inline: 20px;
+}
+.hosting i {
+  font-size: 15em;
+}
+/*footer section*/
+.footer {
+  background-color: var(--dark-color);
+  color: #fff;
+}
+.footer ul {
+  list-style-type: none;
+}
+.footer div:nth-child(3) {
+  display: flex;
+  justify-content: space-around;
+}
+.footer div:nth-child(3) i {
+  font-size: 1.5em;
+  margin-inline: 10px;
+}
+.grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+/*THE STYLING FOR FEATURES.HTML*/
+.intro .flex {
+  flex-wrap: wrap;
+  justify-content: space-between;
+  inline-size: 80vw;
+}
+.intro .container {
+  padding-block: 15px;
+}
+.intro {
+  color: #fff;
+}
+.intro i {
+  font-size: 120px;
+}
+.intro h1 {
+  font-size: 3em;
+  font-weight: normal;
+}
+.secpart .grid {
+  grid-template-columns: 3fr 1fr;
+  grid-template-rows: 1fr 2fr 1fr;
+  grid-row-gap: 50px;
+}
+/*arranging these items on the grid*/
+.secpart .grid div {
+  grid-column: 1/2;
+  grid-row: 2/3;
+  opacity: 0.7;
+}
+.secpart .grid div small {
+  font-size: 13px;
+}
+.secpart .grid i {
+  grid-column: 2/3;
+  grid-row: 1/-1;
+  font-size: 250px;
+  color: var(--primary-color);
+}
+/*Next, the gridandcards section*/
+.gridandcards {
+  margin-block-end: 50px;
+}
+.gridandcards .grid {
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+/*Next using a loop to position the first two items in the grid*/
+/*Next, even if they auto-positioned, wanna tryna use code to arange dem other grid spaces*/
+/*Wanna position that third exception*/
+/*Wanna position that third exception*/
+/*Wanna position that third exception*/
+/*Wanna position that third exception*/
+}
+.gridandcards .grid p {
+  display: inline-block;
+  opacity: 0.5;
+  font-size: 12px;
+}
+.gridandcards .grid i {
+  margin-inline: 20px;
+  font-size: 50px;
+}
+.gridandcards .grid div:nth-child(1) {
+/*each one spans (4-n) columns*/
+  grid-row: 1 /2;
+  grid-column-start: 1;
+  grid-column-end: span 3;
+}
+.gridandcards .grid div:nth-child(2) {
+/*each one spans (4-n) columns*/
+  grid-row: 2 /3;
+  grid-column-start: 1;
+  grid-column-end: span 2;
+}
+.gridandcards .grid div:nth-child(3) {
+/*next line of code is 'posed to start this one's column positioning from where the last one stopped*/
+  grid-column-start: 3;
+  grid-column-end: span 1;
+}
+.gridandcards .grid div:nth-child(4) {
+  grid-row: 3/span 1;
+  grid-column-start: 1;
+  grid-column-end: span 1;
+}
+.gridandcards .grid div:nth-child(5) {
+  grid-row: 3/span 1;
+  grid-column-start: 2;
+  grid-column-end: span 1;
+}
+.gridandcards .grid div:nth-child(6) {
+  grid-row: 3/span 1;
+  grid-column-start: 3;
+  grid-column-end: span 1;
+}
+
